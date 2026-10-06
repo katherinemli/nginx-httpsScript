@@ -1,13 +1,20 @@
-# Katherine Liberona Irarrázabal
+# Nginx HTTPS Setup Script
 
-[katherine.lib.ira@gmail.com](mailto:katherine.lib.ira@gmail.com) | (438) 526-1448 | Ontario, Canada | Open Work Permit
+Shell script that turns a fresh Debian/Ubuntu machine into an **HTTPS-ready Nginx server** in one command, for local development or embedded/kiosk devices.
 
-Full Stack Developer with 6 years of experience building scalable web applications and microservices. Specialized in performance optimization and large-scale data processing. Successfully delivered critical applications, including e-commerce logistics systems, emergency response platforms, and network management solutions for satellite communications.
+## What it does
+1. Installs Nginx
+2. Generates a self-signed certificate (OpenSSL, 365 days) from `localhost.conf`
+3. Installs the cert/key into `/etc/ssl`
+4. Replaces the default site with `nginxhttps.conf` (HTTPS server block)
+5. Adds a systemd override to avoid a startup race, reloads and restarts Nginx
 
-## Technical Skills
+## Usage
+```bash
+sudo sh commands.sh
+```
 
-Frontend: React, Vue.js, Angular, CSS, Webpack, D3.js  
-Backend: Go, PHP, C, Django, Python  
-Core: Embedded Systems, Memory Management, Threading, Network Protocols  
-Data: MySQL, MongoDB, Real-time Processing, AI/ML Integration, GIS (Google Maps, Leaflet)  
-DevOps: Docker, AWS, Nginx, Git
+> Self-signed certificates are for development only.
+
+---
+Katherine Liberona Irarrázabal · [github.com/katherinemli](https://github.com/katherinemli)
